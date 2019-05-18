@@ -833,6 +833,7 @@
         },
         {
             "name": "nesbot/carbon",
+
             "version": "2.18.0",
             "source": {
                 "type": "git",
@@ -843,6 +844,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/8322b7bd1805be31867c13bf3cdaab948a0dd406",
                 "reference": "8322b7bd1805be31867c13bf3cdaab948a0dd406",
+
                 "shasum": ""
             },
             "require": {
@@ -889,7 +891,9 @@
                 "datetime",
                 "time"
             ],
+
             "time": "2019-05-16T18:44:35+00:00"
+
         },
         {
             "name": "nikic/php-parser",
