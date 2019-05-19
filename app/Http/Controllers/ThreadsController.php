@@ -43,6 +43,9 @@ class ThreadsController extends Controller
 
     public function show($channel, Thread $thread)
     {
+        if (auth()->check()) {
+            auth()->user()->read($thread);
+        };
         return view('threads.show', [
             'thread' => $thread,
             'replies' => $thread->replies()->paginate(20)
