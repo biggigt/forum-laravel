@@ -3,11 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Favoritable;
 
 class Reply extends Model
 {
-    use Favoritable;
-
     protected $guarded = [];
     /* Активная загрузка (eager loading)  */
     protected $with = ['owner', 'favorites'];

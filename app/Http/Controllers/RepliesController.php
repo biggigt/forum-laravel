@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Http\Controllers;
+use App\Http\Requests\CreatePostRequest;
+use App\Reply;
+use App\Thread;
+
 class RepliesController extends Controller
 {
     public function __construct()

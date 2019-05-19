@@ -1,5 +1,11 @@
 <?php
 
+namespace App\Http\Controllers;
+
+use App\Channel;
+use App\Filters\ThreadFilters;
+use App\Thread;
+
 class ThreadsController extends Controller
 {
     public function __construct()
