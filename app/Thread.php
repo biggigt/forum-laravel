@@ -10,7 +10,6 @@ class Thread extends Model
 {
     protected $guarded = [];
     
-    /* Активная загрузка (eager loading)  */
     protected $with = ['creator', 'channel'];
 
     protected static function boot()

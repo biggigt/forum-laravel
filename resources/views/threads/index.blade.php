@@ -23,8 +23,11 @@
                                         @endif
                                     </a>
                                 </h4>
-
-                                <a href="{{ $thread->path() }}">
+                                
+                                <a class="btn btn-link" href="{{ $thread->path() }}">
+                                    Создатель: {{ $thread->creator->name }}
+                                </a>
+                                <a class="btn btn-link" href="{{ $thread->path() }}">
                                     Сообщений: {{ $thread->replies_count }}
                                 </a>
                             </div>
