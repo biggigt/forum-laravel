@@ -14,6 +14,10 @@ class ThreadPolicy
      *
      * @return void
      */
+    public function update(User $user, Thread $thread)
+    {
+        return $thread->user_id === $user->id;
+    }
     public function __construct()
     {
         //
