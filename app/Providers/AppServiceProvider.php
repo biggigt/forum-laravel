@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $channels = Channel::all();
+        View::share('channels', $channels);
     }
 }
