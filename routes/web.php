@@ -11,7 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/', 'ThreadsController@index');
@@ -26,10 +25,4 @@ Route::get('channels/create', 'ChannelsController@create');
 Route::post('channels', 'ChannelsController@store');
 Route::post('/replies/{reply}/favorites', 'FavoritesController@store');
 Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
-=======
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
->>>>>>> 2cc472ead12c1d3acf6547673caa45fddf7582c2
