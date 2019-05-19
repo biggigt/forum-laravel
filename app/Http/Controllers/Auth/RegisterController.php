@@ -71,6 +71,6 @@ class RegisterController extends Controller
     }
     protected function redirectTo()
     {
-        return route('profile', auth()->user()->name);
+        return route('profile', auth()->user()->id);
     }
 }

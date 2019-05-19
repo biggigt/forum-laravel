@@ -1,4 +1,8 @@
 <?php
+
+namespace App;
+use Illuminate\Database\Eloquent\Model;
+
 trait Favoritable
 {
     /* Полиморфное отношение – получаем все голоса за сообщения */

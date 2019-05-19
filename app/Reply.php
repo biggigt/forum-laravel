@@ -3,10 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Favoritable;
+use Carbon\Carbon;
+use App\Thread;
+use App\User;
 
 class Reply extends Model
 {
+    use Favoritable;
+
     protected $guarded = [];
     /* Активная загрузка (eager loading)  */
     protected $with = ['owner', 'favorites'];
@@ -19,6 +23,6 @@ class Reply extends Model
     }
     public function thread()
 	{
-	    return $this->belongsTo('App\Thread');
+	    return $this->belongsTo(Thread::class);
 	}
 }

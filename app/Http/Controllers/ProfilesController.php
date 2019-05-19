@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Activity;
 use App\User;
+use App\Thread;
 
 class ProfilesController extends Controller
 {
