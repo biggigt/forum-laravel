@@ -1,5 +1,13 @@
 <?php
 
+namespace App\Http\Controllers;
+
+use App\Channel;
+use App\Filters\ThreadFilters;
+use App\Thread;
+use Illuminate\Http\Request;
+use App\User;
+
 class ThreadsController extends Controller
 {
     public function __construct()
@@ -43,6 +51,9 @@ class ThreadsController extends Controller
 
     public function show($channel, Thread $thread)
     {
+        if (auth()->check()) {
+            auth()->user()->read($thread);
+        };
         return view('threads.show', [
             'thread' => $thread,
             'replies' => $thread->replies()->paginate(20)
