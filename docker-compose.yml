@@ -1,0 +1,51 @@
+version: '2'
+services:
+  
+  nginx:
+    build:
+      context: ./
+      dockerfile: docker/nginx.docker
+    volumes:
+      - ./:/var/www:cached
+    ports:
+      - "80:80"
+    links:
+      - php-fpm
+  php-fpm:
+    build:
+      context: ./
+      dockerfile: docker/php-fpm.docker
+    volumes:
+      - ./:/var/www:cached
+    links:
+      - mysql
+    environment:
+      - "DB_HOST=mysql"
+      - "DB_USERNAME=user"
+      - "DB_PASSWORD=pass"
+      - "DB_DATABASE=forum"
+  php-cli:
+    build:
+      context: ./
+      dockerfile: docker/php-cli.docker
+    volumes:
+      - ./:/var/www:cached
+    links:
+      - mysql
+    environment:
+      - "DB_HOST=mysql"
+      - "DB_USERNAME=user"
+      - "DB_DATABASE=forum"
+      - "DB_PASSWORD=pass"
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./docker/mysql:/var/lib/mysql:cached
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root"
+      - "MYSQL_USER=user"
+      - "MYSQL_PASSWORD=pass"
+      - "MYSQL_DATABASE=forum"
+    ports:
+    - "3308:3306"
+    user: "1000:1000"
