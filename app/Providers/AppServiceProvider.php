@@ -25,7 +25,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $channels = Channel::all();
+        try {
+
+            $channels = Channel::all();
+
+        } catch (\Exception $e) {
+
+            $channels = [];
+        }
+
         \View::share('channels', $channels);
     }
 }
